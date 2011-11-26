@@ -1,0 +1,24 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    color: #eeeeeb;
+}
+
+#headline {
+    text-align: center;
+    font-size: 72pt;
+    font-family: 'Fanwood Text', serif;
+    margin-bottom: 10px;
+}
+
+#subline {
+    text-align: center;
+    font-size: 12pt;
+    font-family: 'IM Fell French Canon', serif;
+}
+
+.highlight {
+    color: #f9c39e;
+}
