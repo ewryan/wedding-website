@@ -37,10 +37,12 @@ group :production do
 end
 
 group :development do
+  gem 'mysql2'
   gem 'heroku'
 end
 
 group :test do
   # Pretty printed test output
+  gem 'mysql2'
   gem 'turn', '0.8.2', :require => false
 end
