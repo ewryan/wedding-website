@@ -4,13 +4,37 @@
 
 body, a {
     color: #eeeeeb;
+    background-color: #414143;
+    padding-top: 60px;
 }
 
-#headline {
-    text-align: center;
-    font-size: 72pt;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #f9c39e;
+}
+
+.hero-unit {
+  background-color: #494949;
+  text-align: center;
+  padding: 15px;
+}
+
+.hero-unit img {
+ padding-bottom: 15px;
+}
+
+.headline {
+    color: #eeeeeb;
     font-family: 'Fanwood Text', serif;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.large {
+    font-size: 72px;
 }
 
 #subline {

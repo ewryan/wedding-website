@@ -4,4 +4,8 @@ class HomeController < ApplicationController
 
   end
 
+  def directions
+
+  end
+
 end

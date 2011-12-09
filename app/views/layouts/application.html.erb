@@ -27,7 +27,31 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="topbar">
+    <div class="fill">
+        <div class="container">
+            <a class="brand" href="#"><span class="headline">amanda <span class="highlight">&</span> eric</span></a>
+            <ul class="nav">
+                <li class="<%= is_active?("home#index") %>"><%= link_to "Home", :controller => "home", :action => "index" %></li>
+                <li class="<%= is_active?("home#pictures") %>"><%= link_to "Pictures", :controller => "home", :action => "pictures" %></li>
+                <li class="<%= is_active?("home#directions") %>"><%= link_to "Directions", :controller => "home", :action => "directions" %></li>
+                <li class="<%= is_active?("rsvp#index") %>"><%= link_to "RSVP", :controller => "rsvp", :action => "index" %></li>
+                <li class="<%= is_active?("home#contact") %>"><%= link_to "Contact", :controller => "home", :action => "contact" %></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <%= yield %>
+
+    <footer>
+        <p>&copy; Big Worm 2011</p>
+    </footer>
+
+</div>
+<!-- /container -->
 
 </body>
 </html>
