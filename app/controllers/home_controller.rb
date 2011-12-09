@@ -15,12 +15,10 @@ class HomeController < ApplicationController
   end
 
   def validate_inbound_email params
-  Rails.logger.info "****"
-  Rails.logger.info params
-
     errors = []
     errors <<  "Email can't be blank.  " if params[:email].blank?
     errors <<  "Name can't be blank.  " if params[:name].blank?
+    errors <<  "Subject can't be blank.  " if params[:subject].blank?
     errors <<  "Message can't be blank." if params[:message].blank?
     errors
   end

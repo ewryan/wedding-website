@@ -2,32 +2,40 @@
 
     <h1 class="headline large">Email Us!</h1>
 
+    <br/>
+
     <%= render :partial => 'shared/flashes' %>
 
-    <%= form_tag("/inbound_email", :method => "form-stacked") do %>
+    <%= form_tag("/inbound_email", :class => "") do %>
         <div class="clearfix">
-            <%= label_tag(:email, "Email Address") %>
-            <%= email_field_tag(:email, nil, :class => 'input', :placeholder => 'fauncy@billups.com') %>
-        </div>
-
-        <div class="clearfix">
-            <%= label_tag(:name, "Your Name") %>
-            <%= text_field_tag(:name, nil, :class => 'input', :placeholder => 'Fauncy Billups') %>
-
+            <%= label_tag(:email, "Email Address", :class => 'span5') %>
+            <%= email_field_tag(:email, nil, :class => 'input span7', :placeholder => 'fauncy@billups.com') %>
         </div>
 
         <div class="clearfix">
-            <%= label_tag(:message, "Message") %>
-            <%= text_area_tag(:message, nil, :class => 'input', :placeholder => 'You guys are really cool!') %>
-
+            <%= label_tag(:name, "Your Name", :class => 'span5') %>
+            <%= text_field_tag(:name, nil, :class => 'input span7', :placeholder => 'Fauncy Billups') %>
         </div>
 
         <div class="clearfix">
-            <%= submit_tag("Send", :class => 'btn primary') %>
+            <%= label_tag(:subject, "Subject", :class => 'span5') %>
+            <%= text_field_tag(:subject, nil, :class => 'input span7', :placeholder => 'OMG!') %>
         </div>
 
-
+        <div class="clearfix">
+            <%= label_tag(:message, "Message", :class => 'span5') %>
+            <%= text_area_tag(:message, nil, :class => 'input span7', :placeholder => "I can't wait to moonwalk at your wedding!", :size => '20x10') %>
         </div>
+
+        <div class="row">
+            <div class="span11">
+                &nbsp;
+            </div>
+            <%= submit_tag("Send", :class => 'btn primary span3', :id => 'contact_button') %>
+        </div>
+
     <% end %>
 
-    </div>
+</div>
+
+
