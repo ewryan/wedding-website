@@ -1,0 +1,33 @@
+<div class="hero-unit">
+
+    <h1 class="headline large">Email Us!</h1>
+
+    <%= render :partial => 'shared/flashes' %>
+
+    <%= form_tag("/inbound_email", :method => "form-stacked") do %>
+        <div class="clearfix">
+            <%= label_tag(:email, "Email Address") %>
+            <%= email_field_tag(:email, nil, :class => 'input', :placeholder => 'fauncy@billups.com') %>
+        </div>
+
+        <div class="clearfix">
+            <%= label_tag(:name, "Your Name") %>
+            <%= text_field_tag(:name, nil, :class => 'input', :placeholder => 'Fauncy Billups') %>
+
+        </div>
+
+        <div class="clearfix">
+            <%= label_tag(:message, "Message") %>
+            <%= text_area_tag(:message, nil, :class => 'input', :placeholder => 'You guys are really cool!') %>
+
+        </div>
+
+        <div class="clearfix">
+            <%= submit_tag("Send", :class => 'btn primary') %>
+        </div>
+
+
+        </div>
+    <% end %>
+
+    </div>

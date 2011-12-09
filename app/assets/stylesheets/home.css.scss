@@ -7,7 +7,7 @@ body {
     padding-top: 60px;
 }
 
-body, a {
+body, a, label {
     color: #eeeeeb;
 }
 
@@ -17,6 +17,7 @@ a:hover {
 }
 
 h1,h2,h3,h4,h5,h6 {
+  font-family: 'Fanwood Text', serif;
   color: #f9c39e;
 }
 
@@ -48,4 +49,9 @@ h1,h2,h3,h4,h5,h6 {
 
 .highlight {
     color: #f9c39e;
+}
+
+.contact_form {
+    width: 600px;
+    margin: auto
 }
