@@ -56,6 +56,18 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 11pt;
 }
 
+.wedding_party {
+    font-size:24px;
+}
+
+.wedding_mug {
+    width: 150px;
+}
+
+.wedding_mug img {
+    padding-top: 9px;
+}
+
 .contact_form {
     width: 600px;
     margin: auto
@@ -67,6 +79,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .primary {
     background-color: #494949;
+    text-align: right;
 }
 
 .alternate {
