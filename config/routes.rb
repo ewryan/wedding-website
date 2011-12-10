@@ -57,6 +57,8 @@ WeddingWebsite::Application.routes.draw do
   match '/contact' => 'home#contact'
   match '/inbound_email' => 'home#inbound_email'
 
+  match '/proofs' => redirect('https://plus.google.com/photos/108015937443484303551/albums/5684281962814805953')
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
