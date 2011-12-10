@@ -9,6 +9,7 @@ body {
 
 body, a, label, ul, li {
     color: #eeeeeb;
+    font-family: 'Fanwood Text', serif;
 }
 
 a:hover {
@@ -49,6 +50,10 @@ h1,h2,h3,h4,h5,h6 {
 
 .highlight {
     color: #f9c39e;
+}
+
+.container p {
+    font-size: 11pt;
 }
 
 .contact_form {
