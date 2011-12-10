@@ -7,7 +7,7 @@ body {
     padding-top: 60px;
 }
 
-body, a, label {
+body, a, label, ul, li {
     color: #eeeeeb;
 }
 
@@ -57,5 +57,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #contact_button {
-margin-left: 7px;
+    margin-left: 7px;
+}
+
+.primary {
+    background-color: #494949;
+}
+
+.alternate {
+    background-color: #414143;
 }
