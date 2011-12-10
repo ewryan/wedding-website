@@ -30,12 +30,12 @@
 <div class="topbar">
     <div class="fill">
         <div class="container">
-            <a class="brand" href="/"><span class="headline">amanda <span class="highlight">&</span> eric</span></a>
+            <a class="brand <%= is_active?("home#index") %>" href="/"><span class="headline">amanda <span class="highlight">&</span> eric</span></a>
             <ul class="nav">
-                <li class="<%= is_active?("home#index") %>"><%= link_to "Home", :controller => "home", :action => "index" %></li>
                 <li><%= link_to "Pictures", "https://plus.google.com/photos/108015937443484303551/albums/5684211146845674273?authkey=CNnS7rKutNnCJQ", :target => "_blank" %></li>
                 <li class="<%= is_active?("home#directions") %>"><%= link_to "Directions", :controller => "home", :action => "directions" %></li>
                 <li class="<%= is_active?("home#lodging") %>"><%= link_to "Lodging", :controller => "home", :action => "lodging" %></li>
+                <li class="<%= is_active?("home#wedding_party") %>"><%= link_to "Wedding Party", :controller => "home", :action => "wedding_party" %></li>
                 <li class="<%= is_active?("home#registry") %>"><%= link_to "Registry", :controller => "home", :action => "registry" %></li>
                 <li class="<%= is_active?("rsvp#index") %>"><%= link_to "RSVP", :controller => "rsvp", :action => "index" %></li>
                 <li class="<%= is_active?("home#contact") %>"><%= link_to "Contact", :controller => "home", :action => "contact" %></li>

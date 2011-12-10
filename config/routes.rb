@@ -55,6 +55,7 @@ WeddingWebsite::Application.routes.draw do
   match '/registry' => 'home#registry'
   match '/rsvp' => 'home#rsvp'
   match '/contact' => 'home#contact'
+  match '/wedding_party' => 'home#wedding_party'
   match '/inbound_email' => 'home#inbound_email'
 
   match '/proofs' => redirect('https://plus.google.com/photos/108015937443484303551/albums/5684281962814805953')
