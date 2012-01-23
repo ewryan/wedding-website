@@ -1,1 +1,32 @@
-<%= render :partial => 'shared/in_progress' %>
+<div class="hero-unit">
+    <h3 class="headline large">Registry</h3>
+    <br/>
+    <br/>
+
+    <table class="wedding_party">
+        <tr class="alternate">
+            <td colspan=1 class="wedding_mug"><%= link_to image_tag('target.jpg', :class => 'wedding_mug'), @target_url %></td>
+            <td colspan=3>
+                <h3>Website: <%= link_to 'Target', @target_url, :target => "_blank" %></h3>
+                <h3>Store Locator: <%= link_to 'target.com', 'http://sites.target.com/site/en/spot/page.jsp?title=store_locator_new', :target => "_blank" %></h3>
+            </td>
+        </tr>
+
+        <tr class="primary">
+            <td colspan=1 class="wedding_mug"><%= link_to image_tag('macys.jpg', :class => 'wedding_mug'), @macys_url %></td>
+            <td colspan=3>
+                <h3>Website: <%= link_to "Macy's", @macys_url, :target => "_blank" %></h3>
+                <h3>Store Locator: <%= link_to 'macys.com', 'http://www.macys.com/store/locator/index.ognc', :target => "_blank" %></h3>
+            </td>
+        </tr>
+
+        <tr class="alternate">
+            <td colspan=1 class="wedding_mug"><%= link_to image_tag('pottery_barn.jpg', :class => 'wedding_mug'), @pottery_barn_url %></td>
+            <td colspan=3>
+                <h3>Website: <%= link_to 'Pottery Barn', @pottery_barn_url, :target => "_blank" %></h3>
+                <h3>Store Locator: <%= link_to 'potterybarn.com', 'http://www.potterybarn.com/customer-service/store-locator.html', :target => "_blank" %></h3>
+            </td>
+        </tr>
+    </table>
+</div>
+
