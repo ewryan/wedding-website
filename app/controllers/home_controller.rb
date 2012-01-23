@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
 
   def registry
-    @target_url = 'http://www.target.com/wedd/registry/dlMymye7T4ljgcV3wMRKDw'
-    @macys_url = 'http://www1.macys.com/registry/wedding/guest/?registryId=668558'
-    @pottery_barn_url = 'http://www.potterybarn.com/registry/2933976/registry-list.html'
+    @target_url = 'http://bit.ly/george_ryan_registry_1'
+    @macys_url = 'http://bit.ly/george_ryan_registry_2'
+    @pottery_barn_url = 'http://bit.ly/george_ryan_registry_3'
   end
 
   def inbound_email
