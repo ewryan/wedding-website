@@ -4,4 +4,8 @@ class RsvpController < ApplicationController
 
   end
 
+  def create
+    p params
+  end
+
 end
