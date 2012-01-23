@@ -1,1 +1,55 @@
-<%= render :partial => 'shared/in_progress' %>
+<div class="hero-unit">
+    <h1 class="headline large">Lodging</h1>
+    <br/>
+    <br/>
+
+    <table class="wedding_party">
+        <tr class="alternate">
+            <td colspan=1 class="wedding_mug"><%= image_tag 'lodging/days_inn.jpg', :class => 'wedding_mug' %></td>
+            <td colspan=1 class="address">
+                <h4>Days Inn (<%= link_to 'Map', 'http://g.co/maps/j2ypz', :target => "_blank" %>)</h4>
+
+                <p>240 South Pugh Street</p>
+
+                <p>State College, PA 16801</p>
+
+                <p>(814) 238-8454</p>
+            </td>
+            <td colspan=2 class="details">
+                <p>If you want to be walking distance to the bars, restaurants and shops of downtown State College
+                    and would like a cheap place to sleep, stay here.</p>
+                <ul>
+                    <li>We have blocked rooms here under the names George/Ryan.</li>
+                    <li>Pro tip: There is an indoor pool and a Mad Mex attached to the hotel.</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr class="primary">
+            <td colspan=1 class="wedding_mug"><%= image_tag 'lodging/days_inn.jpg', :class => 'wedding_mug' %></td>
+            <td colspan=1 class="address">
+                <h4>The Penn Stater Hotel (<%= link_to 'Map', 'http://g.co/maps/rnm2n', :target => "_blank" %>)</h4>
+
+                <p>215 Innovation Boulevard</p>
+
+                <p>State College, PA 16803</p>
+
+                <p>(814) 238-8454</p>
+            </td>
+            <td colspan=2 class="details">
+                <p>If you want to be walking distance to the bars, restaurants and shops of downtown State College
+                    and would like a cheap place to sleep, stay here.</p>
+                <ul>
+                    <li>We did not block rooms here but ask to stay in the "new" section of the hotel when booking
+                        your room. This section is a recent addition to the hotel and is very nice.
+                    </li>
+                    <li>Pro tip: The Penn Stater provides shuttles to several key locations around town including
+                        the local airport and downtown State College. You also won't want to miss their champagne
+                        brunch.
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+
