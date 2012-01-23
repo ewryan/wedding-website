@@ -5,7 +5,12 @@ class RsvpController < ApplicationController
   end
 
   def create
-    p params
+    #flash[:notice] = 'RSVP successfully submitted!'
+    flash[:notice] = params
+
+    respond_to do |format|
+      format.html { redirect_to("/rsvp") }
+    end
   end
 
 end

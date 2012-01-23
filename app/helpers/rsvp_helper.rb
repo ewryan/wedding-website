@@ -4,18 +4,17 @@ module RsvpHelper
 
   def number_to_word int
     @number_to_word ||= {
-        1 => "",
-        2 => "Second",
-        3 => "Third",
-        4 => "Fourth",
-        5 => "Fifth",
-        6 => "Sixth",
-        7 => "Seventh",
-        8 => "Eigth",
-        9 => "Ninth",
+        1 => "first",
+        2 => "second",
+        3 => "third",
+        4 => "fourth",
+        5 => "fifth",
+        6 => "sixth",
+        7 => "seventh",
+        8 => "eigth",
+        9 => "ninth",
+        10 => "tenth",
     }
-    p @number_to_word[int]
-
     @number_to_word[int]
   end
 

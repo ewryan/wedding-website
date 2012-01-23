@@ -21,10 +21,20 @@
     <%= form_tag("/rsvp", :class => "") do %>
         <div class="your_name clearfix">
             <%= label_tag(:name, "Your Name", :class => 'span5') %>
-            <%= text_field_tag(:email, nil, :class => 'input span1', :placeholder => 'Mr.') %>
-            <%= text_field_tag(:email, nil, :class => 'input span3', :placeholder => 'First') %>
-            <%= text_field_tag(:email, nil, :class => 'input span3', :placeholder => 'Last') %>
+            <%= text_field_tag(:primary_title, nil, :class => 'input span1', :placeholder => 'Mr.') %>
+            <%= text_field_tag(:primary_first_name, nil, :class => 'input span3', :placeholder => 'First') %>
+            <%= text_field_tag(:primary_last_name, nil, :class => 'input span3', :placeholder => 'Last') %>
             <%= tag "input", {:type => "button", :value => "x", :onclick => "removeGuest()", :class => 'disabled btn small span1', :id => 'remove_guest_button'} %>
+        </div>
+
+        <div class="clearfix">
+            <%= label_tag(:name, "Your Phone Number", :class => 'span5') %>
+            <%= text_field_tag(:primary_phone, nil, :class => 'input span7', :placeholder => '888-867-5309') %>
+        </div>
+
+        <div class="clearfix">
+            <%= label_tag(:name, "Your Email", :class => 'span5') %>
+            <%= text_field_tag(:primary_email, nil, :class => 'input span7', :placeholder => 'fauncy@billups.com') %>
         </div>
 
         <div id="guests">
@@ -44,7 +54,7 @@
 
         <div class="clearfix">
             <%= label_tag(:message, "Message", :class => 'span5') %>
-            <%= text_area_tag(:message, nil, :class => 'input span7', :placeholder => "I can't wait to moonwalk at your wedding!", :size => '20x10') %>
+            <%= text_area_tag(:message, nil, :class => 'input span7', :placeholder => "I can't wait to moonwalk at your wedding!", :size => '20x6') %>
         </div>
 
         <div class="row">
