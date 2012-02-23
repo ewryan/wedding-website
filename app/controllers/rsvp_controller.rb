@@ -10,6 +10,9 @@ class RsvpController < ApplicationController
       guests = create_guests params, primary.id
 
       flash[:notice] = "RSVP successfully submitted for #{params["primary_first_name"]} #{params["primary_last_name"]} and #{guests.size} guests.  <br/> If you need to make any changes please <a href='mailto:aegeorge4@gmail.com'>email us</a> or call us (304-282-9260)."
+
+      RsvpMailer.rsvp_email(primary, guests, params["message"]).deliver
+
     else
       flash[:error] = 'There was an error submitting your RSVP.  All fields are required, except the Message.  Please try again.'
       #TODO - Airbrake

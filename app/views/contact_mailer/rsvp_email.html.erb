@@ -1,0 +1,17 @@
+<html>
+<p>The following message was submitted via</p>
+<p>the RSVP form on amandaanderic.org</p>
+<p>===============================================</p>
+
+<p>Primary:</p>
+<p><%= @primary %></p>
+
+<p>Guests: <%= @guests.size %></p>
+<% guests.each do |guest| %>
+    <p><%= guest %></p>
+<% end %>
+
+<p>Message:</p>
+<p><%= @message %></p>
+
+</html>
