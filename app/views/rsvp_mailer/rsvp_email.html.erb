@@ -3,15 +3,15 @@
 <p>the RSVP form on amandaanderic.org</p>
 <p>===============================================</p>
 
-<p>Primary:</p>
-<p><%= @primary %></p>
+<p><b>Primary:</b> <%= @primary %></p>
+<br/>
 
-<p>Guests: <%= @guests.size %></p>
+<p><b>Guest Count:</b> <%= @guests.size %></p>
 <% @guests.each do |guest| %>
     <p><%= guest %></p>
 <% end %>
 
-<p>Message:</p>
-<p><%= @message %></p>
+<br/>
 
+<p><b>Message:</b> <%= @message %></p>
 </html>
