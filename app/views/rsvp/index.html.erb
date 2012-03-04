@@ -8,6 +8,16 @@
         $('.showing:last').addClass("hidden").removeClass("showing");
     }
 
+
+    function attendingNo() {
+        $('#other_fields').addClass("hidden");
+    }
+
+    function attendingYes() {
+        $('#other_fields').removeClass("hidden");
+    }
+
+
 </script>
 
 <div class="hero-unit">
@@ -16,56 +26,77 @@
 
     <br/>
 
-    <%= render :partial => 'shared/flashes' %>
+    <div id="rsvp_form">
 
-    <%= form_tag("/rsvp", :class => "") do %>
-        <div class="your_name clearfix">
-            <%= label_tag(:name, "Your Name", :class => 'span5') %>
-            <%= text_field_tag(:primary_title, nil, :class => 'input span1', :placeholder => 'Mr.') %>
-            <%= text_field_tag(:primary_first_name, nil, :class => 'input span3', :placeholder => 'First') %>
-            <%= text_field_tag(:primary_last_name, nil, :class => 'input span3', :placeholder => 'Last') %>
-            <%= tag "input", {:type => "button", :value => "x", :onclick => "removeGuest()", :class => 'disabled btn small span1', :id => 'remove_guest_button'} %>
-        </div>
+        <%= render :partial => 'shared/flashes' %>
 
-        <div class="clearfix">
-            <%= label_tag(:name, "Your Phone Number", :class => 'span5') %>
-            <%= text_field_tag(:primary_phone, nil, :class => 'input span7', :placeholder => '888-867-5309') %>
-        </div>
+        <%= form_tag("/rsvp", :class => "") do %>
+            <div class="clearfix row">
+                <%= label_tag(:name, "Are you attending?", :class => 'span5') %>
+                <label class="radio span4">
+                    <%= radio_button_tag 'attending', 'yes', true, :class => 'span1', :onClick => "attendingYes()" %>
+                    Yes
+                </label>
 
-        <div class="clearfix">
-            <%= label_tag(:name, "Your Email", :class => 'span5') %>
-            <%= text_field_tag(:primary_email, nil, :class => 'input span7', :placeholder => 'fauncy@billups.com') %>
-        </div>
-
-        <div id="guests">
-            <% 1.upto(10).each_with_index do |i, j| %>
-                <%= render :partial => 'guest', :locals => {:number => j+1} %>
-            <% end %>
-        </div>
-
-        <div class="row">
-            <div class="span11">
-                &nbsp;
+                <label class="radio span3">
+                    <%= radio_button_tag 'attending', 'no', false, :class => 'span1', :onClick => "attendingNo()" %>
+                    No
+                </label>
             </div>
-            <div class="span4">
-                <%= tag "input", {:type => "button", :value => "Add Guest", :onclick => "addGuest()", :class => 'btn small span2', :id => 'add_guest_button'} %>
-            </div>
-        </div>
 
-        <div class="clearfix">
-            <%= label_tag(:message, "Message", :class => 'span5') %>
-            <%= text_area_tag(:message, nil, :class => 'input span7', :placeholder => "I can't wait to moonwalk at your wedding! (optional)", :size => '20x6') %>
-        </div>
+            <div class="your_name clearfix">
+                <%= label_tag(:name, "Your Name", :class => 'span5') %>
+                <%= text_field_tag(:primary_title, nil, :class => 'input span1', :placeholder => 'Mr.') %>
+                <%= text_field_tag(:primary_first_name, nil, :class => 'input span3', :placeholder => 'First') %>
+                <%= text_field_tag(:primary_last_name, nil, :class => 'input span3', :placeholder => 'Last') %>
+                <%= tag "input", {:type => "button", :value => "x", :onclick => "removeGuest()", :class => 'disabled btn small span1', :id => 'remove_guest_button'} %>
+            </div>
 
-        <div class="row">
-            <div class="span11">
-                &nbsp;
+            <div id="other_fields">
+
+                <div class="clearfix">
+                    <%= label_tag(:name, "Your Phone Number", :class => 'span5') %>
+                    <%= text_field_tag(:primary_phone, nil, :class => 'input span7', :placeholder => '888-867-5309') %>
+                </div>
+
+                <div class="clearfix">
+                    <%= label_tag(:name, "Your Email", :class => 'span5') %>
+                    <%= text_field_tag(:primary_email, nil, :class => 'input span7', :placeholder => 'fauncy@billups.com') %>
+                </div>
+
+                <div id="guests">
+                    <% 1.upto(10).each_with_index do |i, j| %>
+                        <%= render :partial => 'guest', :locals => {:number => j+1} %>
+                    <% end %>
+                </div>
+
+                <div class="row">
+                    <div class="span11">
+                        &nbsp;
+                    </div>
+                    <div class="span4">
+                        <%= tag "input", {:type => "button", :value => "Add Guest", :onclick => "addGuest()", :class => 'btn small span2', :id => 'add_guest_button'} %>
+                    </div>
+                </div>
+
             </div>
-            <div class="span4">
-                <%= submit_tag("Send", :class => 'btn primary span2', :id => 'contact_button') %>
+
+            <div class="clearfix">
+                <%= label_tag(:message, "Message", :class => 'span5') %>
+                <%= text_area_tag(:message, nil, :class => 'input span7', :placeholder => "I can't wait to moonwalk at your wedding! (optional)", :size => '20x6') %>
             </div>
-        </div>
-    <% end %>
+
+            <div class="row">
+                <div class="span11">
+                    &nbsp;
+                </div>
+                <div class="span4">
+                    <%= submit_tag("Send", :class => 'btn primary span2', :id => 'contact_button') %>
+                </div>
+            </div>
+        <% end %>
+
+    </div>
 </div>
 
 

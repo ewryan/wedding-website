@@ -11,14 +11,20 @@ class RsvpController < ApplicationController
                              :last_name => params["primary_last_name"],
                              :primary => true,
                              :phone => params["primary_phone"],
-                             :email => params["primary_email"]
+                             :email => params["primary_email"],
+                             :attending => params["attending"]
       guests = create_guests params, primary.id
 
       RsvpMailer.rsvp_email(primary, guests, params["message"]).deliver
-      flash[:notice] = "RSVP successfully submitted for #{params["primary_first_name"]} #{params["primary_last_name"]} and #{guests.size} guests.  <br/> If you need to make any changes please <a href='/contact'>contact us</a> or call us (304-282-9260)."
+      success_message = if primary.attending?
+                          "Thanks for RSVPing. We're looking forward to seeing you on our big day. <br/> If you need to make any changes please <a href='/contact'>contact us</a> or call us at 304-282-9260."
+                        else
+                          "We are sorry you can't make it.  <br/> If you change your mind please <a href='/contact'>contact us</a> or call us at 304-282-9260."
+                        end
+      flash[:notice] = success_message
 
     else
-      flash[:error] = 'There was an error submitting your RSVP.  All fields are required, except the Message.  Please try again.'
+      flash[:error] = 'There was an error submitting your RSVP.  All fields are required, except message.  Please try again.'
       #TODO - Airbrake
     end
 
@@ -28,7 +34,14 @@ class RsvpController < ApplicationController
   end
 
   def validate_primary params
-    validate("primary",params) && !params["primary_email"].empty? && !params["primary_phone"].empty?
+    result = validate("primary", params)
+    if "yes" == params["attending"]
+      result = result &&
+          !params["primary_email"].empty? &&
+          !params["primary_phone"].empty?
+    end
+
+    result
   end
 
   def validate prefix="primary", params

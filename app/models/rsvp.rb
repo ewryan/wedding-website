@@ -8,4 +8,9 @@ class Rsvp < ActiveRecord::Base
     end
   end
 
+  def attending?
+
+    "yes" == attending
+  end
+
 end
