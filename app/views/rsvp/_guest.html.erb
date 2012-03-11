@@ -1,6 +1,7 @@
 <% @number_str = number_to_word number %>
+<% @hidden_class = 1 == number ? "showing" : "hidden" %>
 
-<div class="clearfix hidden <%= @class_string %>">
+<div class="clearfix <%= @hidden_class %>">
     <%= label_tag(:name, "#{@number_str.capitalize} Guest", :class => 'span5') %>
     <%= text_field_tag("#{number}_guest_title".to_sym, nil, :class => 'input span1', :placeholder => 'Mrs.') %>
     <%= text_field_tag("#{number}_guest_first_name".to_sym, nil, :class => 'input span3', :placeholder => 'First') %>

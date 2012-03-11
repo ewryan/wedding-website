@@ -52,6 +52,21 @@
                 <%= tag "input", {:type => "button", :value => "x", :onclick => "removeGuest()", :class => 'disabled btn small span1', :id => 'remove_guest_button'} %>
             </div>
 
+            <div id="guests">
+                <% 1.upto(10).each_with_index do |i, j| %>
+                    <%= render :partial => 'guest', :locals => {:number => j+1} %>
+                <% end %>
+            </div>
+
+            <div class="row">
+                <div class="span11">
+                    &nbsp;
+                </div>
+                <div class="span4">
+                    <%= tag "input", {:type => "button", :value => "Add Guest", :onclick => "addGuest()", :class => 'btn small span2', :id => 'add_guest_button'} %>
+                </div>
+            </div>
+
             <div id="other_fields">
 
                 <div class="clearfix">
@@ -62,21 +77,6 @@
                 <div class="clearfix">
                     <%= label_tag(:name, "Your Email", :class => 'span5') %>
                     <%= text_field_tag(:primary_email, nil, :class => 'input span7', :placeholder => 'fauncy@billups.com') %>
-                </div>
-
-                <div id="guests">
-                    <% 1.upto(10).each_with_index do |i, j| %>
-                        <%= render :partial => 'guest', :locals => {:number => j+1} %>
-                    <% end %>
-                </div>
-
-                <div class="row">
-                    <div class="span11">
-                        &nbsp;
-                    </div>
-                    <div class="span4">
-                        <%= tag "input", {:type => "button", :value => "Add Guest", :onclick => "addGuest()", :class => 'btn small span2', :id => 'add_guest_button'} %>
-                    </div>
                 </div>
 
             </div>

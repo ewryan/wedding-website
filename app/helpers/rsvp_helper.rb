@@ -4,7 +4,7 @@ module RsvpHelper
 
   def number_to_word int
     @number_to_word ||= {
-        1 => "first",
+        1 => "your",
         2 => "second",
         3 => "third",
         4 => "fourth",
