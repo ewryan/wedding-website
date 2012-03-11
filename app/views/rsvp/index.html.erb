@@ -70,8 +70,8 @@
                     </div>
                 </div>
             </div>
-    <br/>
-    <br/>
+            <br/>
+            <br/>
 
             <div id="other_fields">
 
@@ -90,7 +90,14 @@
                     <%= select(:rsvp, :hotel, Hotel.all.collect { |h| [h.name, h.id] }, :class => 'input span4') %>
                 </div>
 
+                <div class="clearfix">
+                    <%= label_tag(:using_shuttle, "Do you plan on using our shuttle service?", :class => 'span5') %>
+                    <%= select(:rsvp, :using_shuttle, [["Yes", true], ["No", false]], :class => 'input span4') %>
+                </div>
             </div>
+
+            <br/>
+            <br/>
 
             <div class="clearfix">
                 <%= label_tag(:message, "Message", :class => 'span5') %>
