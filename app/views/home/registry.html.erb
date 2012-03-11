@@ -27,6 +27,13 @@
                 <h3>Store Locator: <%= link_to 'potterybarn.com', 'http://www.potterybarn.com/customer-service/store-locator.html', :target => "_blank" %></h3>
             </td>
         </tr>
+
+        <tr class="primary">
+            <td colspan=1 class="wedding_mug"><%= link_to image_tag('amazon.jpg', :class => 'wedding_mug'), @amazon_url %></td>
+            <td colspan=3>
+                <h3>Website: <%= link_to "Amazon", @amazon_url, :target => "_blank" %></h3>
+            </td>
+        </tr>
     </table>
 </div>
 
