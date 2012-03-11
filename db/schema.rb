@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304163653) do
+ActiveRecord::Schema.define(:version => 20120311204418) do
+
+  create_table "hotels", :force => true do |t|
+    t.string "name"
+  end
 
   create_table "rsvps", :force => true do |t|
     t.string   "title"
@@ -24,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20120304163653) do
     t.string   "phone"
     t.string   "email"
     t.string   "attending"
+    t.integer  "hotel_id"
   end
 
 end

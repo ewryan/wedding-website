@@ -5,6 +5,8 @@ class RsvpController < ApplicationController
   end
 
   def create
+    p params
+
     if validate_primary params
       primary = Rsvp.create! :title => params["primary_title"],
                              :first_name => params["primary_first_name"],
@@ -12,7 +14,8 @@ class RsvpController < ApplicationController
                              :primary => true,
                              :phone => params["primary_phone"],
                              :email => params["primary_email"],
-                             :attending => params["attending"]
+                             :attending => params["attending"],
+                             :hotel_id => params["rsvp"]["hotel"]
       guests = create_guests params, primary.id
 
       RsvpMailer.rsvp_email(primary, guests, params["message"]).deliver
@@ -59,7 +62,8 @@ class RsvpController < ApplicationController
                              :first_name => params["#{guest_num}_guest_first_name"],
                              :last_name => params["#{guest_num}_guest_last_name"],
                              :primary => false,
-                             :guest_of_id => primary_id
+                             :guest_of_id => primary_id,
+                             :hotel_id => params["rsvp"]["hotel"]
         guests << guest
       end
     end
