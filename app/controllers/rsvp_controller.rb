@@ -5,8 +5,6 @@ class RsvpController < ApplicationController
   end
 
   def create
-    p params
-
     if validate_primary params
       primary = Rsvp.create! :title => params["primary_title"],
                              :first_name => params["primary_first_name"],
@@ -20,7 +18,7 @@ class RsvpController < ApplicationController
 
       RsvpMailer.rsvp_email(primary, guests, params["message"]).deliver
       success_message = if primary.attending?
-                          "Thanks for RSVPing. We're looking forward to seeing you on our big day. <br/> If you need to make any changes please <a href='/contact'>contact us</a> or call us at 304-282-9260."
+                          "We've created an RSVP for #{params["primary_title"]} #{params["primary_first_name"]} #{params["primary_last_name"]} and #{guests_message guests}. <br/> If you need to make any changes please <a href='/contact'>contact us</a> or call us at 304-282-9260."
                         else
                           "We are sorry you can't make it.  <br/> If you change your mind please <a href='/contact'>contact us</a> or call us at 304-282-9260."
                         end
@@ -34,6 +32,15 @@ class RsvpController < ApplicationController
     respond_to do |format|
       format.html { redirect_to("/rsvp") }
     end
+  end
+
+  def guests_message guests
+    if guests && guests.size == 1
+      "#{guests.count} guest"
+    else
+      "#{guests.count} guests"
+    end
+
   end
 
   def validate_primary params
