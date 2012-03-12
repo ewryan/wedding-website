@@ -72,7 +72,8 @@ class RsvpController < ApplicationController
                              :primary => false,
                              :guest_of_id => primary_id,
                              :hotel_id => params["rsvp"]["hotel"],
-                             :using_shuttle => params["rsvp"]["using_shuttle"]
+                             :using_shuttle => params["rsvp"]["using_shuttle"],
+                             :attending => params["attending"]
         guests << guest
       end
     end
