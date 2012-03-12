@@ -15,6 +15,7 @@
     <table class="table" id="guest_list">
         <thead>
         <tr>
+            <th>Id</th>
             <th>Title</th>
             <th>First</th>
             <th>Last</th>
@@ -27,6 +28,7 @@
 
         <% @rsvps.each do |rsvp| %>
             <tr>
+                <td><%= rsvp.id %></td>
                 <td><%= rsvp.title %></td>
                 <td><%= rsvp.first_name %></td>
                 <td><%= rsvp.last_name %></td>
