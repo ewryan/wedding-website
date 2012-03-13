@@ -1,7 +1,9 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#guest_list').dataTable({
-            "aaSorting": [[ 0, "desc" ]]
+            "aaSorting": [
+                [ 0, "desc" ]
+            ]
         });
     });
 </script>
@@ -12,7 +14,7 @@
 
     <h2>Guest Count: <%= @rsvps.count %></h2>
     <br/>
-    <table class="table" id="guest_list">
+    <table class="admin table" id="guest_list">
         <thead>
         <tr>
             <th>Id</th>
@@ -26,8 +28,9 @@
 
         </thead>
 
-        <% @rsvps.each do |rsvp| %>
-            <tr>
+        <% @rsvps.each_with_index do |rsvp, i| %>
+            <% cls= i % 2==0 ? "" : "alternate" %>
+            <tr class=<%= cls %>>
                 <td><%= rsvp.id %></td>
                 <td><%= rsvp.title %></td>
                 <td><%= rsvp.first_name %></td>

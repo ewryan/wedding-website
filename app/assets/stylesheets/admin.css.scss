@@ -1,9 +1,24 @@
-.container {
+.admin {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
 }
 
 .dataTables_filter {
     text-align: left;
     margin-left: 690px;
+}
+
+.table {
+    border: 1px solid;
+}
+
+.admin tbody tr.odd:hover, tbody tr.odd td.highlighted {
+	background-color: #333;
+}
+
+.admin tbody tr.even:hover, tbody tr.even td.highlighted {
+	background-color: #333;
+}
+
+.admin th:hover {
+    background-color: #666;
 }
